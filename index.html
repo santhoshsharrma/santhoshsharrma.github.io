@@ -2,27 +2,25 @@
 <html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Santhosh Sharma — Backend Developer</title>
+<title>Santhosh Sharma — Software Developer </title>
 <meta name="description" content="Santhosh Sharma — backend developer. Java, Spring Boot, PostgreSQL. Hyderabad, India.">
 <meta name="theme-color" content="#0A0A0A">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{color-scheme:dark;--orange:#FF6000;--cyan:#53C8D3;--purple:#7A5BD6;--ink:#F5F3EF;--bg:#0A0A0A;--paper:#151311;--line:rgba(245,243,239,.18);--line2:rgba(245,243,239,.09);--muted:#A39C93;
---disp:"Space Grotesk","Aeonik Fono",Arial,Helvetica,sans-serif;--st:env(safe-area-inset-top,0px);--sb:env(safe-area-inset-bottom,0px)}
+:root{color-scheme:dark;--orange:#FF6000;--cyan:#53C8D3;--purple:#7A5BD6;--ink:#F5F3EF;--bg:#0A0A0A;--paper:#151311;--line:rgba(245,243,239,.18);--line2:rgba(245,243,239,.09);--muted:#A39C93;--disp:"Space Grotesk",Arial,Helvetica,sans-serif;--st:env(safe-area-inset-top,0px);--sb:env(safe-area-inset-bottom,0px)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:calc(60px + var(--st));background:var(--bg)}
 body{font-family:var(--disp);background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:var(--sb)}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1200px;margin:0 auto;padding:0 28px}
-.mono,.btn,.nav-mid,.idx,.tn,.k,.pk,.cmeta,.flinks,.fbot{font-family:var(--disp);text-transform:uppercase}
+.btn,.nav-mid,.idx,.tn,.k,.pk,.cmeta,.flinks,.fbot{text-transform:uppercase}
 h1,h2,h3{font-weight:700;letter-spacing:-.02em;line-height:1}
 h2{font-size:clamp(2rem,5vw,3.6rem);letter-spacing:-.03em;color:#fff}
 h3{font-size:1.15rem;font-weight:600;line-height:1.15;color:#fff}
 p{color:var(--muted)}
 ::selection{background:var(--orange);color:#0A0A0A}
 :focus-visible{outline:2px solid var(--orange);outline-offset:3px}
-/* header */
 .header{position:fixed;top:0;left:0;right:0;z-index:60;padding-top:var(--st);background:color-mix(in srgb,var(--bg) 86%,transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:84px;gap:20px;transition:height .25s ease}
 .header.sticky .nav{height:54px}
@@ -40,7 +38,6 @@ p{color:var(--muted)}
 #pxTrack{position:fixed;top:calc(85px + var(--st));left:0;width:100%;height:6px;z-index:998;background:var(--line2);transition:top .25s ease}
 .header.sticky #pxTrack{top:calc(55px + var(--st))}
 #pxFill{height:100%;width:0;background:var(--orange);transition:width .08s steps(6)}
-/* buttons */
 .btn{font-size:.78rem;font-weight:500;letter-spacing:.1em;padding:13px 22px;display:inline-flex;align-items:center;justify-content:center;gap:10px;cursor:pointer;border:1.5px solid var(--ink);background:transparent;color:var(--ink);white-space:nowrap;position:relative;overflow:hidden;isolation:isolate;transition:color .3s,border-color .3s,padding .25s}
 .btn::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.22,1,.36,1)}
 .btn:hover::before{transform:scaleX(1)}.btn:hover{color:#111;border-color:var(--orange);animation:glitch .25s steps(2) 1}
@@ -51,8 +48,7 @@ p{color:var(--muted)}
 .btn.sm{padding:9px 14px;font-size:.7rem}
 @keyframes blink{50%{opacity:0}}
 @keyframes glitch{0%,100%{transform:translate(0)}20%{transform:translate(-2px,2px)}40%{transform:translate(2px,-2px)}60%{transform:translate(-2px,-2px)}80%{transform:translate(2px,2px)}}
-/* hero */
-.hero{padding-top:clamp(120px,6vw,120px);padding-bottom:50px}
+.hero{padding-top:120px;padding-bottom:50px}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,56px);align-items:center}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:28px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .eyebrow b{color:var(--ink);font-weight:500}
@@ -63,8 +59,7 @@ p{color:var(--muted)}
 .hero-cta{margin-top:34px;display:flex;flex-wrap:wrap;gap:12px}
 .abh,.cta-frame{position:relative;overflow:hidden;background:#0A0A0A}
 .abh{width:100%;aspect-ratio:4/4.8}
-.img{position:absolute;inset:-10%;transform:scale(1.1);background:
-radial-gradient(circle at 25% 30%,#FF6000 0,transparent 38%),radial-gradient(circle at 78% 22%,#53C8D3 0,transparent 34%),radial-gradient(circle at 60% 78%,#7A5BD6 0,transparent 40%),radial-gradient(circle at 15% 85%,#FF6000 0,transparent 30%),#14100d}
+.img{position:absolute;inset:-10%;transform:scale(1.1);background:radial-gradient(circle at 25% 30%,#FF6000 0,transparent 38%),radial-gradient(circle at 78% 22%,#53C8D3 0,transparent 34%),radial-gradient(circle at 60% 78%,#7A5BD6 0,transparent 40%),radial-gradient(circle at 15% 85%,#FF6000 0,transparent 30%),#14100d}
 .img.b{opacity:.5;background:radial-gradient(circle at 70% 60%,#53C8D3 0,transparent 36%),radial-gradient(circle at 20% 15%,#7A5BD6 0,transparent 40%),radial-gradient(circle at 85% 90%,#FF6000 0,transparent 32%)}
 .tiles{position:absolute;inset:0;display:grid;z-index:2;pointer-events:none}
 .tiles i{background:#0A0A0A;margin:-.5px;animation:off 1ms linear var(--d) forwards}
@@ -74,12 +69,10 @@ radial-gradient(circle at 25% 30%,#FF6000 0,transparent 38%),radial-gradient(cir
 @keyframes cA{from{transform:scale(1.15) translate3d(-3%,2%,0)}to{transform:scale(1.25) translate3d(5%,-4%,0)}}
 @keyframes cB{from{transform:scale(1.15) translate3d(4%,-2%,0)}to{transform:scale(1.28) translate3d(-6%,4%,0) rotate(2deg)}}
 .hov{position:absolute;inset:0;display:grid;pointer-events:none;z-index:3}
-/* ticker */
 .ticker{border-block:1px solid var(--line);background:var(--ink);color:var(--bg);overflow:hidden;white-space:nowrap}
 .run{display:inline-flex;gap:36px;padding:14px 0;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;animation:scroll 34s linear infinite}
 .run span{display:inline-flex;align-items:center;gap:36px}.run .o{color:var(--orange)}
 @keyframes scroll{to{transform:translateX(-50%)}}
-/* sections */
 section{padding:50px 0}
 .shead{border-top:1.5px solid var(--ink);padding-top:20px}
 .idx{font-size:.74rem;letter-spacing:.12em;color:var(--muted);margin-bottom:12px}
@@ -135,7 +128,6 @@ summary::-webkit-details-marker{display:none}
 .pm::before{left:0;top:8px;width:18px;height:2px}.pm::after{left:8px;top:0;width:2px;height:18px;transition:opacity .2s}
 details[open] .pm::after{opacity:0}
 .a{padding:0 2px 26px;max-width:70ch}
-/* cta */
 .cta{position:relative;width:100%;min-height:clamp(520px,48vw,700px);display:flex;align-items:center;justify-content:center;background:#000;color:#0A0A0A;overflow:hidden;margin-top:30px}
 .cta-frame{position:absolute;inset:0;z-index:0}
 .cta .img{background:radial-gradient(circle at 20% 30%,#FF6000 0,transparent 45%),radial-gradient(circle at 80% 70%,#ff8a3d 0,transparent 45%),radial-gradient(circle at 60% 15%,#e94b00 0,transparent 40%),#FF6000}
@@ -176,7 +168,7 @@ footer{border-top:1.5px solid var(--ink);padding:56px 0 40px}
 <body>
 <header class="header" id="hd"><div class="wrap">
 <div class="nav">
-<a class="lock" href="#top"><i></i>santhoshsharrma.me</a>
+<a class="lock" href="#top"><i></i>santhoshsharrma</a>
 <nav class="nav-mid" id="navmid"><a href="#about">About</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#recognition">Recognition</a><a href="#stack">Stack</a><a href="#faq">FAQ</a></nav>
 <div class="nav-right"><a class="btn" href="#contact"><span class="sq"></span>Get in touch</a>
 <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false"><span class="sq"></span>Menu</button></div>
@@ -188,7 +180,7 @@ footer{border-top:1.5px solid var(--ink);padding:56px 0 40px}
 <main id="top">
 <section class="hero"><div class="wrap"><div class="hero-grid">
 <div>
-<span class="eyebrow"><span class="dotp"></span><span><b>Open to internships</b> · Class of 2027</span></span>
+<span class="eyebrow"><span class="dotp"></span><span><b>Open to internships and full-time roles</b> · Class of 2027</span></span>
 <h1>Santhosh Sharma</h1>
 <p class="sub">Backend developer building with Java, Spring Boot and PostgreSQL. <span>I want to build products used by millions and grow by solving real problems.</span></p>
 <div class="hero-cta"><a class="btn fill" href="#projects"><span class="sq"></span>View projects</a><a class="btn" href="#contact">Get in touch</a><a class="btn" target="_blank" rel="noopener" href="https://github.com/santhoshsharrma">GitHub ↗</a></div>
@@ -210,36 +202,36 @@ footer{border-top:1.5px solid var(--ink);padding:56px 0 40px}
 <p>I like understanding how things work beyond the surface. I follow engineering talks and podcasts from people building products at scale, especially around backend systems, architecture and the decisions behind them. I learn best by building things myself, questioning how they work, and gradually going deeper.</p></div>
 </div>
 <div class="stats reveal">
-<div class="stat"><b>8.18</b><div class="k">CGPA · B.Tech CS</div></div>
-<div class="stat"><b>4</b><div class="k">Projects shipped</div></div>
+<div class="stat"><b>8.17</b><div class="k">CGPA · B.Tech CS</div></div>
+<div class="stat"><b>6</b><div class="k">Projects shipped</div></div>
 <div class="stat"><b>2027</b><div class="k">Graduating</div></div>
 </div></div></section>
 
 <section id="projects"><div class="wrap">
 <div class="shead reveal"><div class="idx">02 / Projects</div><h2>Things I've built to understand how they work</h2></div>
 <div class="tracks">
-<div class="track reveal"><div class="tn">Project 01</div><div class="bar"></div><div class="cat">Systems</div><h3>Java Image Crawler</h3>
+<div class="track reveal"><div class="tn">Project 01</div><div class="bar"></div><div class="cat">Backend · Featured</div><h3>XP Engine — Gamification Backend</h3>
+<p>Gamification backend for XP, streaks and leaderboards. PostgreSQL as source of truth, Redis as rebuildable cache, idempotent event handling under concurrency. <b style="color:#fff;font-weight:600">1.54 ms p50 rank lookups at 1M+ users (~20× faster than PostgreSQL)</b>. <b style="color:#fff;font-weight:600">~918 req/s, 57.6 ms p95, 0% failures</b> across 110K+ requests.</p>
+<div class="setup">Stack: <b>Java 21 · Spring Boot · PostgreSQL · Redis · Docker · JDBC · JUnit 5</b></div>
+<div class="links"><a class="btn sm fill" target="_blank" rel="noopener" href="https://github.com/santhoshsharrma/xp-engine">Code ↗</a></div></div>
+<div class="track reveal"><div class="tn">Project 02</div><div class="bar"></div><div class="cat">Systems</div><h3>Java Image Crawler</h3>
 <p>A concurrent crawler built from scratch: HttpClient fetches pages, JSoup parses image URLs, and a fixed pool of 5 threads downloads them. No crawling framework, to learn Java's HTTP, concurrency and file I/O directly.</p>
 <div class="setup">Stack: <b>Java · Multithreading · HTTP · Maven</b></div>
 <div class="links"><a class="btn sm" target="_blank" rel="noopener" href="https://github.com/santhoshsharrma/java-image-crawler">Code ↗</a></div></div>
-<div class="track reveal"><div class="tn">Project 02</div><div class="bar"></div><div class="cat">Data</div><h3>Startup Fund Intelligence</h3>
+<div class="track reveal"><div class="tn">Project 03</div><div class="bar"></div><div class="cat">Data</div><h3>Startup Fund Intelligence</h3>
 <p>Analyzed 500 startup-funding records across 6 dimensions, with an interactive dashboard for filtering, KPI aggregation, sortable deal analysis and trend discovery.</p>
 <div class="setup">Stack: <b>React · Vite · Recharts</b></div>
 <div class="links"><a class="btn sm fill" target="_blank" rel="noopener" href="https://startupfunding-analysis.vercel.app/">Live demo</a><a class="btn sm" target="_blank" rel="noopener" href="https://github.com/santhoshsharrma/startupfundinganalysis">Code ↗</a></div></div>
-<div class="track reveal"><div class="tn">Project 03</div><div class="bar"></div><div class="cat">Data</div><h3>CORRLY — Correlation Matrix Analyzer</h3>
+<div class="track reveal"><div class="tn">Project 04</div><div class="bar"></div><div class="cat">Data</div><h3>CORRLY — Correlation Matrix Analyzer</h3>
 <p>Cut correlation analysis from 7 manual steps to 2 operations (a 71.4% reduction) by automating dataset analysis, correlation computation, high-correlation detection, visualization and reports.</p>
 <div class="setup">Stack: <b>JavaScript · Data Viz</b></div>
 <div class="links"><a class="btn sm fill" target="_blank" rel="noopener" href="https://santhoshsharrma.github.io/correlation-matrix-analyzer/">Live demo</a><a class="btn sm" target="_blank" rel="noopener" href="https://github.com/santhoshsharrma/correlation-matrix-analyzer">Code ↗</a></div></div>
-<div class="track reveal"><div class="tn">Project 04</div><div class="bar"></div><div class="cat">Tooling</div><h3>Renewly</h3>
-<p>A cross-platform CLI for tracking and managing subscriptions, built to automate a manual chore with a handful of composable commands.</p>
-<div class="setup">Stack: <b>Python · CLI</b></div>
-<div class="links"><a class="btn sm" target="_blank" rel="noopener" href="https://github.com/santhoshsharrma/renewly">Code ↗</a></div></div>
 </div></div></section>
 
 <section id="education"><div class="wrap">
 <div class="shead reveal"><div class="idx">03 / Education</div><h2>Where I've studied</h2></div>
 <div class="timeline reveal">
-<div class="tl"><div class="d">2023 — 2027</div><div><h3>Siddhartha Institute of Technology and Sciences</h3><p>B.Tech, Computer Science · CGPA 8.18</p></div><div class="ph">Current</div></div>
+<div class="tl"><div class="d">2023 — 2027</div><div><h3>Siddhartha Institute of Technology and Sciences</h3><p>B.Tech, Computer Science · CGPA 8.17</p></div><div class="ph">Current</div></div>
 <div class="tl"><div class="d">2021 — 2023</div><div><h3>Narayana Junior College</h3><p>Intermediate, MPC · 90.1%</p></div><div class="ph">Completed</div></div>
 <div class="tl"><div class="d">2015 — 2021</div><div><h3>S.A.V. High School</h3><p>SSC · 9.7/10</p></div><div class="ph">Completed</div></div>
 </div></div></section>
@@ -249,10 +241,12 @@ footer{border-top:1.5px solid var(--ink);padding:56px 0 40px}
 <div class="idx-in">Awards</div>
 <div class="prizes">
 <div class="prize feature reveal"><div class="pk">Best Project Award</div><div class="amt">2nd</div><ul><li>Led a 3-member team, top 1.7% of 120 participants.</li></ul></div>
-<div class="prize reveal"><div class="pk">BrainOVision · National Hackathon</div><div class="amt">5th</div><ul><li>Top 0.7% at a national-level hackathon.</li></ul></div>
 </div>
-<div class="idx-in">Publication · Mar 2025</div>
-<div class="prize pub reveal"><div><div class="pk">International Research Journal of Modernization in Engineering Technology and Science</div><div class="amt">The Smart Property Risk Detection</div>
+<div class="idx-in">Publications</div>
+<div class="prize pub reveal" style="margin-bottom:14px"><div><div class="pk">Sep 2026 · Co-author · International Journal of Data Science and IoT Management System</div><div class="amt">Startup Financial Funding Trends and Investment Insights</div>
+<p>Vol. 5, No. 3, pp. 1411–1417.</p></div>
+<a class="btn fill" target="_blank" rel="noopener" href="https://ijdim.com/journal/index.php/ijdim/article/view/1412"><span class="sq"></span>Read the paper</a></div>
+<div class="prize pub reveal"><div><div class="pk">Jul 2025 · First author · International Research Journal of Modernization in Engineering, Technology and Science</div><div class="amt">The Smart Property Risk Detection</div>
 <p>Led a team of four in conceptualizing HYDRAA Vision. The paper proposes a way to identify property and land risks in Telangana, such as flooding, land instability and environmental concerns, and explores how data could support earlier, better-informed decisions.</p></div>
 <a class="btn fill" target="_blank" rel="noopener" href="https://www.irjmets.com/paperdetail.php?paperId=fc3ccec3a0152477f42d0a9dba0bcbed"><span class="sq"></span>Read the paper</a></div>
 </div></section>
@@ -262,26 +256,26 @@ footer{border-top:1.5px solid var(--ink);padding:56px 0 40px}
 <div class="ptab reveal">
 <div class="pc"><h3>Languages</h3><p>Java, Python, SQL</p></div>
 <div class="pc"><h3>Backend</h3><p>Spring Boot, REST APIs</p></div>
-<div class="pc"><h3>Data</h3><p>PostgreSQL, MySQL, Redis</p></div>
-<div class="pc"><h3>Cloud</h3><p>AWS, Docker, Linux</p></div>
-<div class="pc"><h3>Tooling</h3><p>Git, Maven, IntelliJ IDEA, Bash</p></div>
-<div class="pc"><h3>Learning now</h3><p>DSA, Redis, System design basics</p></div>
+<div class="pc"><h3>Database & Caching</h3><p>PostgreSQL, MySQL, Redis</p></div>
+<div class="pc"><h3>Testing</h3><p> JUnit 5</p></div>
+<div class="pc"><h3>Tools</h3><p>Git, Maven, Postman, Docker, K6, IntelliJ IDEA</p></div>
+<div class="pc"><h3>Currently Learning</h3><p>DSA, System design basics</p></div>
 </div></div></section>
 
 <section id="faq"><div class="wrap">
 <div class="shead reveal"><div class="idx">06 / FAQ</div><h2>Questions</h2></div>
 <div class="faq reveal">
-<details open><summary>What are you looking for?<span class="pm"></span></summary><div class="a"><p>Internships and entry-level backend roles where I can build products used at scale and learn from engineers who have done it.</p></div></details>
-<details><summary>Why backend, coming from data science?<span class="pm"></span></summary><div class="a"><p>I got more interested in the systems that move and serve data than in the data itself. Backend work is where that curiosity leads.</p></div></details>
-<details><summary>How do you learn?<span class="pm"></span></summary><div class="a"><p>By building. I follow engineering talks and podcasts, then re-create ideas myself, like writing a crawler without a framework to understand concurrency properly.</p></div></details>
+<details open><summary>What am i looking for?<span class="pm"></span></summary><div class="a"><p>Internships and entry-level roles where I can contribute to real projects, write reliable code, and learn from experienced engineers.</p></div></details>
+<details><summary>Why backend, coming from data science?<span class="pm"></span></summary><div class="a"><p>I chose Data Science because I was interested in data analysis and how data can be used to solve important problems. Over time, I became equally curious about the backend infrastructure behind these applications — how systems process data, manage databases, and work together. That curiosity gradually led me toward backend development.</p></div></details>
+<details><summary>How do you learn?<span class="pm"></span></summary><div class="a"><p>By building. I followed engineering talks and podcasts, then re-created ideas myself, like writing a crawler without a framework to understand concurrency properly.</p></div></details>
 <details><summary>Where are you based?<span class="pm"></span></summary><div class="a"><p>Hyderabad, India. I graduate in 2027.</p></div></details>
 </div></div></section>
 
 <section class="cta" id="contact">
 <div class="cta-frame" id="ctaf"><div class="img a"></div><div class="img b"></div><div class="tiles"></div></div>
 <div class="cta-in">
-<h2 class="reveal">Are you ready?</h2>
-<div class="cmeta reveal">Open to internships · Hyderabad, India</div>
+<h2 class="reveal">Let's discuss opportunities</h2>
+<div class="cmeta reveal">Open to internships and full-time roles · Hyderabad, India</div>
 <a class="btn reveal" href="mailto:santhoshsharmapaturi@gmail.com"><span class="sq"></span>Email me</a>
 </div></section>
 </main>
@@ -300,7 +294,6 @@ footer{border-top:1.5px solid var(--ink);padding:56px 0 40px}
 <script>
 (function(){
 var calm=matchMedia('(prefers-reduced-motion: reduce)').matches;
-/* tile reveal then drift */
 function reveal(stage,cols,rows,delay,total,hover){
  var host=stage.querySelector('.tiles'),N=cols*rows;
  host.style.gridTemplateColumns='repeat('+cols+',1fr)';host.style.gridTemplateRows='repeat('+rows+',1fr)';
@@ -309,9 +302,8 @@ function reveal(stage,cols,rows,delay,total,hover){
  var t=[];for(i=0;i<N;i++){var e=document.createElement('i');host.appendChild(e);t[i]=e}
  o.forEach(function(x,n){t[x.i].style.setProperty('--d',(delay+n/N*total).toFixed(2)+'s')});
  var ready=(delay+total+.6)*1000;
- setTimeout(function(){stage.classList.add("moving");if(stage.parentNode.classList.contains("cta"))stage.parentNode.classList.add("moving")},ready);
+ setTimeout(function(){stage.classList.add('moving')},ready);
  if(!hover||calm)return;
- /* hover gap grid */
  var ov=document.createElement('div');ov.className='hov';ov.style.gridTemplateColumns='repeat('+cols+',1fr)';ov.style.gridTemplateRows='repeat('+rows+',1fr)';
  stage.appendChild(ov);var cells=[],rnd=[],cur=[];
  for(i=0;i<N;i++){var c=document.createElement('div');c.style.cssText='box-shadow:inset 0 0 0 calc(var(--k,0) * var(--gap,0px)) #000';ov.appendChild(c);cells[i]=c;rnd[i]=Math.random();cur[i]=0}
@@ -332,11 +324,8 @@ function reveal(stage,cols,rows,delay,total,hover){
 }
 reveal(document.getElementById('abh'),8,10,.4,2.6,true);
 var cf=document.getElementById('ctaf'),started=false;
-function playCta(){if(started)return;started=true;reveal(cf,matchMedia('(max-width:640px)').matches?8:16,10,.2,2.6,false);cf.parentNode.classList.add("moving")}
-/* the drift class goes on the frame, so mirror it for the CSS */
-new MutationObserver(function(){}).observe(cf,{attributes:true});
+function playCta(){if(started)return;started=true;reveal(cf,matchMedia('(max-width:640px)').matches?8:16,10,.2,2.6,false)}
 var cio=new IntersectionObserver(function(e){if(e[0].isIntersecting){playCta();cio.disconnect()}},{threshold:.35});cio.observe(cf);
-/* header, progress, stt, scroll spy */
 var hd=document.getElementById('hd'),fill=document.getElementById('pxFill'),stt=document.getElementById('stt'),sb=document.getElementById('sb'),C=2*Math.PI*22,tick2=false;
 var secs=[].slice.call(document.querySelectorAll('main section[id]')),as=[].slice.call(document.querySelectorAll('#navmid a'));
 function upd(){var h=document.documentElement,y=scrollY,max=h.scrollHeight-innerHeight,p=max>0?Math.min(y/max,1):0;
@@ -344,14 +333,12 @@ function upd(){var h=document.documentElement,y=scrollY,max=h.scrollHeight-inner
  var c='';secs.forEach(function(s){if(y+160>=s.offsetTop)c=s.id});as.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+c)});tick2=false}
 addEventListener('scroll',function(){if(!tick2){tick2=true;requestAnimationFrame(upd)}},{passive:true});upd();
 stt.onclick=function(){scrollTo({top:0,behavior:calm?'auto':'smooth'})};
-/* menu */
 var mb=document.getElementById('menuBtn'),mn=document.getElementById('mobile');
 function set(o){mn.classList.toggle('open',o);mb.setAttribute('aria-expanded',o)}
 mb.onclick=function(){set(!mn.classList.contains('open'))};
 mn.addEventListener('click',function(e){if(e.target.closest('a'))set(false)});
 addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
 addEventListener('resize',function(){if(innerWidth>940)set(false)});
-/* reveal on scroll */
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
 document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
 })();
