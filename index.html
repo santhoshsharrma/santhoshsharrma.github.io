@@ -1,455 +1,301 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Santhosh Sharma — Backend Software Developer </title>
-<meta name="description" content="Santhosh Sharma, backend developer in Hyderabad. Java, Spring Boot, PostgreSQL and Redis. Featured projects: XP Engine, Veritas and LinkedIn 500 Tracker.">
-<meta name="theme-color" content="#ffffff">
-<meta name="color-scheme" content="light">
-<meta property="og:title" content="Santhosh Sharma — Backend Developer">
-<meta property="og:description" content="Backend systems, built and measured. XP Engine, Veritas and more.">
-<meta property="og:url" content="https://santhoshsharrma.me/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23000'/%3E%3Ctext x='16' y='22' font-family='Helvetica,Arial,sans-serif' font-weight='700' font-size='15' text-anchor='middle' fill='white'%3ESS%3C/text%3E%3C/svg%3E">
+<title>Santhosh Sharma — Backend Software Developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap">
-<script>document.documentElement.className='js'</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --ink:#0b0b0c;--body:#1d1d1f;--mute:#4b4b50;--label:#6b6b72;
-  --white:#fff;--tray:#f4f4f6;--line:#e4e4e8;--line-2:#cfcfd5;
-  --d-text:#f5f5f7;--d-mute:#b4b4ba;--d-line:rgba(255,255,255,.14);--d-tray:#161618;
-  --font:Inter,-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  --e:cubic-bezier(.22,.61,.36,1);--nav:52px;--w:1120px;
-}
-*,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-padding-top:calc(var(--nav) + 16px)}
-@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
-body{margin:0;background:var(--white);color:var(--body);font:450 16.5px/1.6 var(--font);font-optical-sizing:auto;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-h1,h2,h3,h4,p,ul,dl,dd,figure{margin:0;padding:0}
-ul{list-style:none}
-a{color:inherit;text-decoration:none}
-button{font:inherit;color:inherit}
-svg{display:block;flex:none}
-.i{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:6px}
-.skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--ink);color:#fff;padding:8px 14px;border-radius:999px}
-.skip:focus{top:8px}
-.wrap{max-width:var(--w);margin-inline:auto;padding-inline:clamp(20px,5vw,40px)}
-.num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum","calt"}
-
-/* ---------- Nav: clear at the top, frosted after scroll ---------- */
-.nav{position:fixed;inset:0 0 auto 0;z-index:50;padding-top:env(safe-area-inset-top);background:rgba(255,255,255,0);-webkit-backdrop-filter:saturate(100%) blur(0);backdrop-filter:saturate(100%) blur(0);border-bottom:1px solid transparent;transition:background-color .5s var(--e),backdrop-filter .5s var(--e),-webkit-backdrop-filter .5s var(--e),border-color .5s var(--e)}
-.nav.scrolled,.nav.open{background:rgba(255,255,255,.74);-webkit-backdrop-filter:saturate(180%) blur(22px);backdrop-filter:saturate(180%) blur(22px);border-bottom-color:rgba(0,0,0,.09)}
-.bar{max-width:var(--w);margin-inline:auto;height:var(--nav);padding-inline:clamp(20px,5vw,40px);display:flex;align-items:center;gap:28px}
-.mark{margin-right:auto;font-weight:650;font-size:16px;letter-spacing:-.02em;color:var(--ink)}
-.links{display:flex;gap:26px}
-.links a{font-size:13.5px;font-weight:500;color:var(--mute);transition:color .2s}
-.links a:hover{color:var(--ink)}
-.pill{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:46px;padding:0 24px;border-radius:999px;border:1px solid transparent;background:var(--ink);color:#fff;font-size:15px;font-weight:600;letter-spacing:-.01em;cursor:pointer;transition:background-color .2s var(--e),border-color .2s var(--e),transform .12s}
-.pill:hover{background:#2c2c30}
-.pill:active{transform:scale(.97)}
-.pill.line{background:transparent;color:var(--ink);border-color:var(--line-2)}
-.pill.line:hover{background:rgba(0,0,0,.05);border-color:var(--ink)}
-.pill.sm{height:32px;padding:0 14px;font-size:13px}
-.dk .pill,.dark .pill{background:#fff;color:#000}
-.dk .pill:hover,.dark .pill:hover{background:#d8d8dd}
-.dk .pill.line,.dark .pill.line{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
-.dk .pill.line:hover,.dark .pill.line:hover{background:rgba(255,255,255,.1);border-color:#fff}
-.menu{display:none;width:40px;height:40px;margin-right:-10px;border:0;background:none;border-radius:10px;flex-direction:column;gap:5px;justify-content:center;align-items:center;cursor:pointer}
-.menu span{width:17px;height:2px;background:var(--ink);border-radius:2px;transition:transform .3s var(--e)}
-.nav.open .menu span:first-child{transform:translateY(3.5px) rotate(45deg)}
-.nav.open .menu span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
-@media (max-width:879px){
-  .menu{display:flex}.bar>.pill{display:none}
-  .links{position:absolute;top:calc(var(--nav) + env(safe-area-inset-top));left:0;right:0;flex-direction:column;gap:0;padding:4px clamp(20px,5vw,40px) 22px;background:rgba(255,255,255,.86);-webkit-backdrop-filter:saturate(180%) blur(22px);backdrop-filter:saturate(180%) blur(22px);border-bottom:1px solid rgba(0,0,0,.09);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .3s var(--e),transform .3s var(--e),visibility 0s .3s}
-  .nav.open .links{opacity:1;visibility:visible;transform:none;transition:opacity .3s var(--e),transform .3s var(--e)}
-  .links a{font-size:24px;font-weight:650;letter-spacing:-.03em;padding:13px 0;border-bottom:1px solid var(--line);color:var(--ink)}
-  .links li:last-child a{border-bottom:0}
-}
-
-/* ---------- Motion ---------- */
-.js .rv{opacity:0;transform:translateY(16px);transition:opacity .8s var(--e),transform .8s var(--e)}
-.js .rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}*{transition-duration:.01ms!important}}
-
-/* ---------- Hero ---------- */
-.hero{padding:calc(var(--nav) + clamp(48px,9vw,112px)) 0 clamp(40px,6vw,72px)}
-.status{display:inline-flex;align-items:center;gap:10px;font-size:14.5px;font-weight:550;color:var(--mute)}
-.status i{width:7px;height:7px;border-radius:50%;background:var(--ink);box-shadow:0 0 0 4px rgba(0,0,0,.08)}
-.hero h1{margin-top:26px;font-size:clamp(52px,12.4vw,150px);line-height:.92;font-weight:700;letter-spacing:-.06em;color:var(--ink)}
-.hero .grid{margin-top:clamp(28px,4vw,48px);display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:24px clamp(24px,5vw,72px);align-items:end}
-.hero h2{font-size:clamp(26px,3.6vw,40px);line-height:1.12;font-weight:650;letter-spacing:-.035em;color:var(--ink)}
-.hero .lead{font-size:clamp(17px,1.8vw,19px);line-height:1.55;color:var(--mute);font-weight:480}
-.acts{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center}
-.hero .acts{margin-top:24px}
-.now{margin-top:20px;font-size:14.5px;color:var(--label);font-weight:500}
-.now a{color:var(--ink);font-weight:600;border-bottom:1.5px solid var(--line-2)}
-.now a:hover{border-bottom-color:var(--ink)}
-@media (max-width:859px){.hero .grid{grid-template-columns:1fr}}
-
-.ledger{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:24px;overflow:hidden}
-.ledger>div{padding:20px 24px;border-left:1px solid var(--line)}
-.ledger>div:first-child{border-left:0}
-.ledger dt{font-size:13px;font-weight:550;color:var(--label)}
-.ledger dd{margin-top:3px;font-size:17px;font-weight:650;letter-spacing:-.02em;color:var(--ink)}
-@media (max-width:759px){.ledger{grid-template-columns:1fr 1fr}.ledger>div:nth-child(odd){border-left:0}.ledger>div:nth-child(n+3){border-top:1px solid var(--line)}}
-
-/* ---------- Section heads ---------- */
-.sec{padding-block:clamp(56px,9vw,112px)}
-.sh{display:flex;align-items:end;justify-content:space-between;flex-wrap:wrap;gap:12px 32px;margin-bottom:clamp(28px,4vw,48px)}
-.sh h2{font-size:clamp(34px,5.6vw,64px);line-height:1;font-weight:700;letter-spacing:-.05em;color:var(--ink)}
-.sh p{max-width:26em;color:var(--mute);font-size:17px;font-weight:480}
-
-/* ---------- Case study sheets (bezel: tray + inset panels) ---------- */
-.sheet{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:8px;padding:8px;background:var(--tray);border:1px solid var(--line);border-radius:34px;transition:border-color .25s}
-.sheet+.sheet{margin-top:20px}
-.sheet:hover{border-color:var(--line-2)}
-.panel{background:var(--white);border:1px solid var(--line);border-radius:26px;padding:clamp(24px,3.4vw,40px)}
-.sheet .wide{grid-column:1/-1}
-.sheet.dk{background:var(--d-tray);border-color:#000;color:var(--d-text)}
-.sheet.dk:hover{border-color:#000}
-.dk .panel{background:#000;border-color:var(--d-line);color:var(--d-text)}
-@media (max-width:939px){.sheet{grid-template-columns:1fr}}
-
-/* numeric panel */
-.phead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line)}
-.phead h3{font-size:15px;font-weight:650;letter-spacing:-.01em;color:var(--ink)}
-.phead span{font-size:12.5px;font-weight:550;color:var(--label)}
-.dk .phead{border-bottom-color:var(--d-line)}.dk .phead h3{color:#fff}.dk .phead span{color:var(--d-mute)}
-.figure{display:flex;flex-direction:column;gap:20px;min-height:100%}
-.k{font-size:14px;font-weight:600;color:var(--label)}
-.dk .k{color:var(--d-mute)}
-.big{font-size:clamp(76px,11vw,148px);line-height:.86;font-weight:700;letter-spacing:-.07em;color:var(--ink)}
-.dk .big{color:#fff}
-.big.md{font-size:clamp(52px,7vw,84px);letter-spacing:-.06em;line-height:.95}
-.big small{font-size:.42em;letter-spacing:-.03em;font-weight:650;margin-left:.08em}
-.arrow{display:inline-block;width:.5em;height:.5em;margin:0 .12em;vertical-align:.04em;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;opacity:.5}
-.cap{font-size:15px;line-height:1.5;color:var(--mute);max-width:24em}
-.dk .cap{color:var(--d-mute)}
-.minis{margin-top:auto;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;border:1px solid var(--line);border-radius:18px;overflow:hidden}
-.minis>div{padding:14px 16px;border-left:1px solid var(--line)}
-.minis>div:first-child{border-left:0}
-.minis b{display:block;font-size:20px;line-height:1.15;font-weight:650;letter-spacing:-.03em;color:var(--ink)}
-.minis span{display:block;margin-top:2px;font-size:12.5px;font-weight:500;color:var(--label)}
-.dk .minis{border-color:var(--d-line)}.dk .minis>div{border-color:var(--d-line)}
-.dk .minis b{color:#fff}.dk .minis span{color:var(--d-mute)}
-@media (max-width:479px){.minis{grid-auto-flow:row}.minis>div{border-left:0;border-top:1px solid var(--line)}.minis>div:first-child{border-top:0}.dk .minis>div{border-top-color:var(--d-line)}}
-
-.cmp{display:grid;gap:10px}
-.cmp>div{display:grid;grid-template-columns:84px minmax(0,1fr) 72px;align-items:center;gap:12px;font-size:13.5px;font-weight:550}
-.cmp .t{height:10px;border-radius:999px;background:rgba(255,255,255,.1)}
-.cmp .t i{display:block;height:100%;border-radius:999px;background:#5a5a60}
-.cmp .t i.hi{background:#fff}
-.cmp b{text-align:right;font-weight:650}
-.bars{display:grid;gap:14px}
-.bars li{display:grid;grid-template-columns:1fr auto;gap:6px 12px;font-size:14px}
-.bars b{font-weight:650;color:var(--ink)}
-.bars span{color:var(--mute);font-weight:500}
-.bars .t{grid-column:1/-1;position:relative;height:10px;border-radius:999px;background:#ececf0}
-.bars .t i{position:absolute;inset:0 auto 0 0;border-radius:999px;background:var(--ink)}
-.bars .t u{position:absolute;top:-4px;bottom:-4px;left:50%;width:1.5px;background:var(--line-2)}
-.chance{font-size:12.5px;color:var(--label);font-weight:500}
-
-/* narrative panel */
-.story .kick{font-size:14px;font-weight:600;color:var(--label)}
-.dk .story .kick{color:var(--d-mute)}
-.story h3{margin-top:8px;font-size:clamp(26px,3.2vw,38px);line-height:1.08;font-weight:700;letter-spacing:-.04em;color:var(--ink);text-wrap:balance}
-.dk .story h3{color:#fff}
-.beats{margin-top:clamp(20px,3vw,28px)}
-.beat{display:grid;grid-template-columns:104px minmax(0,1fr);gap:4px 20px;padding:16px 0;border-top:1px solid var(--line)}
-.dk .beat{border-top-color:var(--d-line)}
-.beat h4{font-size:14px;font-weight:650;color:var(--ink);padding-top:2px}
-.dk .beat h4{color:#fff}
-.beat p{color:var(--mute);text-wrap:pretty}
-.dk .beat p{color:var(--d-mute)}
-.beat p strong{color:var(--ink);font-weight:650}
-.dk .beat p strong{color:#fff}
-@media (max-width:559px){.beat{grid-template-columns:1fr}}
-.foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 20px;margin-top:8px;padding-top:18px;border-top:1px solid var(--line)}
-.dk .foot{border-top-color:var(--d-line)}
-.tech{font-size:13.5px;font-weight:500;color:var(--label);max-width:34em}
-.dk .tech{color:var(--d-mute)}
-.tlink{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:var(--ink);padding-block:6px;border-bottom:1.5px solid var(--line-2);transition:border-color .2s}
-.tlink:hover{border-bottom-color:var(--ink)}
-
-/* Veritas detail grid */
-.cells{display:grid;grid-template-columns:repeat(3,1fr);margin:-8px -8px -8px 0;border-radius:0}
-.cells>div{padding:22px 24px 22px 0}
-.cells>div:nth-child(n+4){border-top:1px solid var(--line)}
-.cells>div:not(:nth-child(3n+1)){padding-left:24px;border-left:1px solid var(--line)}
-.cells h4{font-size:15px;font-weight:650;color:var(--ink)}
-.cells p{margin-top:6px;font-size:14.5px;line-height:1.5;color:var(--mute)}
-.cells em{font-style:normal;font-weight:650;color:var(--ink)}
-@media (max-width:859px){.cells{grid-template-columns:1fr;margin:0}.cells>div,.cells>div:not(:nth-child(3n+1)){padding:18px 0;border-left:0;border-top:1px solid var(--line)}.cells>div:first-child{border-top:0}}
-.warn{margin-top:20px;padding:16px 18px;border:1.5px dashed var(--line-2);border-radius:16px;font-size:14.5px;line-height:1.55;color:var(--mute)}
-.warn b{color:var(--ink);font-weight:650}
-.stat-live{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--ink)}
-.stat-live i{width:7px;height:7px;border-radius:50%;background:var(--ink);box-shadow:0 0 0 4px rgba(0,0,0,.08)}
-
-/* ---------- About / skills / record / education ---------- */
-.two{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:24px clamp(28px,6vw,88px)}
-@media (max-width:859px){.two{grid-template-columns:1fr}}
-.statement{font-size:clamp(28px,4.2vw,48px);line-height:1.1;font-weight:700;letter-spacing:-.045em;color:var(--ink);text-wrap:balance}
-.prose{display:grid;gap:16px;color:var(--mute);font-weight:480;text-wrap:pretty}
-.prose p:first-child{color:var(--body)}
-.prose b{color:var(--ink);font-weight:650}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:26px;overflow:hidden}
-.grid3>div{padding:24px 26px 26px;border-left:1px solid var(--line)}
-.grid3>div:nth-child(3n+1){border-left:0}
-.grid3>div:nth-child(n+4){border-top:1px solid var(--line)}
-.grid3 h3{font-size:14px;font-weight:600;color:var(--label)}
-.grid3 p{margin-top:8px;font-size:18px;line-height:1.4;font-weight:600;letter-spacing:-.02em;color:var(--ink)}
-@media (max-width:859px){.grid3{grid-template-columns:1fr 1fr}.grid3>div{border-left:0!important;border-top:1px solid var(--line)!important}.grid3>div:nth-child(-n+2){border-top:0!important}.grid3>div:nth-child(even){border-left:1px solid var(--line)!important}}
-@media (max-width:519px){.grid3{grid-template-columns:1fr}.grid3>div:nth-child(even){border-left:0!important}.grid3>div:nth-child(2){border-top:1px solid var(--line)!important}}
-
-.rows{border-top:1.5px solid var(--ink)}
-.row{display:grid;grid-template-columns:116px minmax(0,1fr) auto;gap:6px 24px;padding:20px 0;border-bottom:1px solid var(--line);align-items:baseline}
-.row time,.row .d{font-size:14px;font-weight:600;color:var(--label);font-variant-numeric:tabular-nums}
-.row h3{font-size:19px;line-height:1.3;font-weight:650;letter-spacing:-.025em;color:var(--ink)}
-.row p{margin-top:4px;color:var(--mute);font-size:15.5px;max-width:44em;text-wrap:pretty}
-.row .type{font-size:13px;font-weight:600;color:var(--label);white-space:nowrap}
-.row .tlink{margin-top:8px;font-size:14.5px}
-@media (max-width:659px){.row{grid-template-columns:1fr}.row .type{order:-1}}
-
-/* ---------- Contact ---------- */
-.dark{background:#000;color:var(--d-text)}
-.contact{padding-block:clamp(88px,14vw,176px)}
-.contact h2{font-size:clamp(48px,11vw,150px);line-height:.92;font-weight:700;letter-spacing:-.065em;color:#fff}
-.contact .sub{margin-top:24px;max-width:28em;font-size:clamp(18px,2.2vw,22px);color:var(--d-mute);font-weight:480}
-.contact .acts{margin-top:32px}
-.mail{display:inline-block;margin-top:28px;font-size:clamp(18px,2.6vw,26px);font-weight:600;letter-spacing:-.02em;color:#fff;border-bottom:1.5px solid rgba(255,255,255,.35);padding-bottom:2px;transition:border-color .2s}
-.mail:hover{border-bottom-color:#fff}
-.soc{margin-top:56px;padding-top:20px;border-top:1px solid var(--d-line);display:flex;flex-wrap:wrap;gap:8px 28px;font-size:15px;font-weight:550}
-.soc a{display:inline-flex;align-items:center;gap:6px;padding-block:6px;color:var(--d-mute);transition:color .2s}
-.soc a:hover{color:#fff}
-footer.dark{border-top:1px solid var(--d-line);padding:20px 0 calc(24px + env(safe-area-inset-bottom));font-size:13.5px;color:var(--d-mute)}
-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 24px}
-footer a:hover{color:#fff}
+:root{--paper:#eee6d3;--ink:#1c1915;--mute:#675e4f;--rule:#c4b595;--red:#b3341f;--card:#f7f1e2;--xp:#f1c9a5;--ve:#bccbdc;--li:#cdd8b0;--sk:#e6c3bf;--ed:#ead9a2;--ac:#d3c4d6;--ab:#c9dcd3;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#14120e;--ink:#e9e0cb;--mute:#9a907b;--rule:#4a4334;--red:#e2573f;--card:#1c1a14;--xp:#3a281a;--ve:#1b2633;--li:#232b17;--sk:#35201e;--ed:#33290f;--ac:#2a2030;--ab:#1a2a25;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#14120e;--ink:#e9e0cb;--mute:#9a907b;--rule:#4a4334;--red:#e2573f;--card:#1c1a14;--xp:#3a281a;--ve:#1b2633;--li:#232b17;--sk:#35201e;--ed:#33290f;--ac:#2a2030;--ab:#1a2a25;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:12px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 14.5px/1.75 "JetBrains Mono","Cascadia Mono",Consolas,monospace;overflow-x:hidden}
+a{color:inherit;text-underline-offset:3px}a:hover{color:var(--red)}
+h1,h2,h3,.big{font-family:"Cormorant Garamond",Georgia,serif;font-weight:700}
+.wrap{max-width:1060px;margin:0 auto;padding:0 22px;position:relative;z-index:1}
+button{font:inherit;color:inherit;background:var(--card);border:2px solid var(--ink);cursor:pointer}
+button:hover{background:var(--ink);color:var(--paper)}
+/* three-dot nav */
+#mn{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));right:16px;z-index:60;width:46px;height:46px;display:flex;gap:4px;align-items:center;justify-content:center;box-shadow:3px 3px 0 var(--ink)}
+#mn i{width:6px;height:6px;border-radius:50%;background:currentColor}
+#menu{position:fixed;top:calc(68px + env(safe-area-inset-top,0px));right:16px;z-index:60;width:min(290px,calc(100vw - 32px))}
+#menu[hidden]{display:none}
+#menu a{display:flex;gap:10px;padding:7px 0;text-decoration:none;border-bottom:1px dotted var(--mute)}
+#menu a b{color:var(--red);font-weight:400;width:22px}
+#menu .f{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-size:12px;color:var(--mute)}
+#menu .f button{padding:1px 8px}
+/* window */
+.w{border:2px solid var(--ink);background:var(--card);box-shadow:6px 6px 0 var(--ink);position:relative;min-width:0}
+.w>.t{background:var(--ink);color:var(--paper);padding:2px 10px;font-size:12px;display:flex;justify-content:space-between;gap:10px}
+.w>.b{padding:16px}
+.chip{display:inline-block;background:var(--ink);color:var(--paper);padding:0 7px;font-size:12px}
+.chip.r{background:var(--red);color:#fff}
+/* sections */
+.s{position:relative;overflow:hidden;padding:64px 0;background:var(--bg,var(--paper))}
+.s::before{content:"";position:absolute;left:0;right:0;top:0;height:12px;background:radial-gradient(circle,var(--ink) 1.3px,transparent 1.8px) 0 0/8px 8px;opacity:.55}
+.ht{position:absolute;width:420px;height:420px;pointer-events:none;background:radial-gradient(circle,var(--ink) 1.3px,transparent 1.8px) 0 0/7px 7px;-webkit-mask-image:radial-gradient(circle,#000,transparent 68%);mask-image:radial-gradient(circle,#000,transparent 68%);opacity:.4;right:-90px;top:-70px}
+.ht.l{right:auto;left:-110px;top:auto;bottom:-120px}
+h1{font-size:clamp(64px,11vw,140px);line-height:.88;margin:14px 0 22px;letter-spacing:-.02em}
+h1 i{font-style:normal;color:var(--red)}
+h2,h3{font-size:clamp(30px,4.4vw,48px);line-height:1.05;margin:10px 0 18px;max-width:20ch}
+h3{max-width:26ch}
+h4{margin:16px 0 2px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--red);font-weight:700}
+p{margin:0 0 12px;max-width:62ch}
+.lede{font:600 clamp(24px,3vw,34px)/1.1 "Cormorant Garamond",serif;margin:0 0 18px;max-width:20ch}
+.ver{font-size:12px;color:var(--mute);letter-spacing:.1em;text-transform:uppercase}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.cta a{border:2px solid var(--ink);padding:6px 14px;text-decoration:none;background:var(--card)}
+.cta a.p{background:var(--ink);color:var(--paper)}.cta a:hover{background:var(--red);border-color:var(--red);color:#fff}
+canvas{width:100%;image-rendering:pixelated;display:block;background:var(--card);border:1px solid var(--ink)}
+.two{display:grid;grid-template-columns:1fr 1.05fr;gap:34px;align-items:start}
+.stack{font-size:12.5px;color:var(--mute);margin:12px 0}
+.lim{border-left:3px solid var(--red);padding-left:12px;font-size:13.5px}
+.note{font-size:12px;color:var(--mute);margin:8px 0 0}
+/* dotted bars */
+.bars .r{display:grid;grid-template-columns:150px 1fr 66px;gap:8px;align-items:center;margin:7px 0;font-size:12.5px}
+.bars .t{height:16px;position:relative;border:1px solid var(--ink);background:radial-gradient(circle,var(--rule) 1.3px,transparent 1.7px) 0 0/5px 5px}
+.bars .t i{position:absolute;left:0;top:0;bottom:0;width:0;background:radial-gradient(circle,var(--ink) 1.6px,transparent 2px) 0 0/5px 5px}
+.bars .f .t i{background:radial-gradient(circle,var(--red) 1.6px,transparent 2px) 0 0/5px 5px}
+.bars .n{text-align:right;font-weight:700}
+.auc .t::after{content:"";position:absolute;left:50%;top:-4px;bottom:-4px;border-left:2px solid var(--red)}
+dl.k{margin:12px 0 0}dl.k div{display:flex;gap:8px}dl.k div::before{content:"";order:1;flex:1;border-bottom:1px dotted var(--mute);transform:translateY(-5px)}dl.k dd{order:2;margin:0;font-weight:700}
+/* rank */
+.ctl{display:flex;gap:10px;align-items:center;font-size:12.5px;margin:10px 0 2px}.ctl input{flex:1;accent-color:var(--red)}
+pre{margin:0;font:12.5px/1.55 "JetBrains Mono",monospace;white-space:pre;overflow-x:auto}
+pre.out{white-space:pre-wrap;margin-top:6px}
+/* request path */
+.path{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:30px}
+.path>div{padding:14px;border-right:2px dotted var(--ink);font-size:12.5px;line-height:1.6}
+.path>div:last-child{border:0}
+.path b{display:block;color:var(--red);font-size:12px;letter-spacing:.1em}
+/* matrix */
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:5px 8px;border-bottom:1px dotted var(--mute);text-align:center}
+th{font-weight:400;color:var(--mute);font-size:11.5px}
+td:first-child,th:first-child{text-align:left}
+td.y{color:var(--red);font-size:18px;line-height:1}
+td.n{color:var(--rule)}
+.b.cat{padding:0;display:grid;grid-template-columns:repeat(3,1fr)}
+.cat>div{padding:14px 16px;border:1px dotted var(--mute);margin:-1px 0 0 -1px;font-weight:700}
+.cat small{display:block;color:var(--mute);font-weight:400;font-size:12px}
+@media(max-width:780px){.b.cat{grid-template-columns:1fr}}
+/* timeline */
+.tl{display:grid;grid-template-columns:repeat(15,1fr);gap:2px;text-align:center;font-size:10.5px;color:var(--mute);margin:6px 0 26px}
+.tl span{display:block;width:12px;height:12px;border-radius:50%;margin:0 auto 3px;background:radial-gradient(circle,var(--rule) 40%,transparent 45%)}
+.tl .e span{background:var(--red);width:15px;height:15px}
+.rec{display:grid;grid-template-columns:90px 1fr;gap:16px;padding:12px 0;border-top:1px dotted var(--ink)}
+.rec time{color:var(--mute);font-size:12.5px}.rec p{margin:2px 0 0;font-size:13.5px}
+.nodes{display:flex;gap:0;align-items:center;margin:26px 0 6px;flex-wrap:wrap}
+.nodes span.nd{border:2px solid var(--ink);background:var(--card);padding:6px 12px;font-size:13px}
+.nodes em{flex:0 0 46px;height:2px;background:radial-gradient(circle,var(--ink) 1.3px,transparent 1.8px) 0 0/6px 6px;position:relative;font-style:normal}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:22px;font-size:13px}
+.facts div{border-top:2px solid var(--ink);padding-top:6px}.facts small{display:block;color:var(--mute);text-transform:uppercase;letter-spacing:.1em;font-size:11px}
+.big{font-size:clamp(44px,9vw,110px);line-height:.95;margin:0 0 18px}
+.dark{background:var(--ink);color:var(--paper)}.dark a:hover{color:var(--paper);opacity:.7}.dark .ht{background:radial-gradient(circle,var(--paper) 1.3px,transparent 1.8px) 0 0/7px 7px}.dark::before{background:radial-gradient(circle,var(--paper) 1.3px,transparent 1.8px) 0 0/8px 8px}
+footer{margin-top:40px;font-size:12px;opacity:.7;display:flex;gap:18px;flex-wrap:wrap;justify-content:space-between}
+@media(max-width:780px){.hero,.two{grid-template-columns:1fr}.path{grid-template-columns:1fr 1fr}.path>div{border:0;border-bottom:2px dotted var(--ink)}.bars .r{grid-template-columns:100px 1fr 58px}.rec{grid-template-columns:1fr;gap:2px}.w{box-shadow:4px 4px 0 var(--ink)}.tl{font-size:9px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="ext" viewBox="0 0 12 12"><path d="M4 2.5h5.5V8M9.5 2.5l-7 7"/></symbol>
-  <symbol id="arr" viewBox="0 0 24 24"><path d="M3 12h17M14 5l7 7-7 7"/></symbol>
-</svg>
-<div id="sentinel" style="position:absolute;top:0;height:12px;width:1px" aria-hidden="true"></div>
+<body id="top">
+<button id="mn" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i></button>
+<nav id="menu" class="w" hidden aria-label="Sections"><div class="t"><span>menu</span><span>6 sections</span></div><div class="b">
+<a href="#about"><b>01</b>About me</a><a href="#projects"><b>02</b>My projects</a><a href="#skills"><b>03</b>My skills</a><a href="#education"><b>04</b>My education</a><a href="#achievements"><b>05</b>My achievements</a><a href="#contact"><b>06</b>Contact</a>
+<div class="f"><button id="th" aria-label="Toggle light or dark">◐ THEME</button></div></div></nav>
 
-<header class="nav" id="nav">
-  <div class="bar">
-    <a class="mark" href="#top">Santhosh Sharma</a>
-    <nav aria-label="Primary">
-      <ul class="links" id="links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#work">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#record">Record</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <a class="pill sm" href="Santhosh_Sharma%20Resume.pdf">Resume</a>
-    <button class="menu" id="menu" type="button" aria-expanded="false" aria-controls="links" aria-label="Menu"><span></span><span></span></button>
-  </div>
-</header>
+<main>
+<section class="s"><div class="ht"></div><div class="wrap">
+<div class="hero">
+<div>
+<div class="ver">Backend developer · Hyderabad</div>
+<h1>Santhosh<br>Sharma<i>.</i></h1>
+<p class="lede">I find problems worth solving, then I build.</p>
+<p>Open to internships and entry-level roles where I can write reliable code and learn from experienced engineers.</p>
+<div class="cta"><a class="p" href="#projects">Read the work</a><a href="https://santhoshsharrma.me/Santhosh_Sharma%20Resume.pdf">Résumé</a><a href="https://github.com/santhoshsharrma">GitHub</a></div>
+</div>
+<div class="w"><div class="t"><span>field.dither</span><span>move your pointer</span></div><div class="b"><canvas id="hf" width="96" height="64" aria-hidden="true"></canvas></div></div>
+</div>
+<div class="facts"><div><small>Studying</small>B.Tech CSE (Data Science)</div><div><small>CGPA</small>8.17 / 10</div><div><small>Now building</small>Veritas</div><div><small>Learning</small>Kafka, AWS, DSA</div></div>
+</div></section>
 
-<main id="main">
-  <section class="hero" id="top">
-    <div class="wrap">
-      <p class="status rv"><i aria-hidden="true"></i>Open to internships and full-time roles</p>
-      <h1 class="rv">Santhosh<br>Sharma</h1>
-      <div class="grid">
-        <h2 class="rv">I find problems worth solving, then i build.</h2>
-        <div class="rv">
-          <p class="lead">Backend developer building with Java and Spring Boot. I want to build products used by millions and grow by solving real problems.</p>
-          <div class="acts"><a class="pill" href="#work">See my work</a><a class="pill line" href="Santhosh_Sharma%20Resume.pdf">Resume</a></div>
-          <p class="now">Now building <a href="#veritas">Veritas</a>, an AI-content detection engine.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="s" id="about" style="--bg:var(--ab)"><div class="ht l"></div><div class="wrap">
+<span class="chip">01 · About me</span>
+<h2 style="max-width:24ch">I got more interested in the systems that move and serve data than in the data itself.</h2>
+<p>I started in Computer Science with a Data Science specialization, with a lot of statistics and analysis along the way.</p>
+<p>I chose Data Science because I was interested in how data can be used to solve important problems. Over time I became equally curious about the infrastructure behind those applications: how systems process data, manage databases, and work together.</p>
+<p><b>I learn by building.</b> I follow engineering talks and podcasts from people building products at scale, especially around backend systems, architecture and the decisions behind them. Then I re-create the ideas myself, like writing a crawler without a framework to understand concurrency properly.</p>
+<p><b>What I’m looking for:</b> Internships and entry-level roles where I can contribute to real projects, write reliable code, and learn from experienced engineers.</p>
+</div></section>
 
-  <div class="wrap">
-    <dl class="ledger rv">
-      <div><dt>Based in</dt><dd>Hyderabad, India</dd></div>
-      <div><dt>Studying</dt><dd>B.Tech CSE (Data Science)</dd></div>
-      <div><dt>Graduating</dt><dd class="num">2027 · CGPA 8.17</dd></div>
-      <div><dt>Learning now</dt><dd>Kafka basics, AWS, DSA</dd></div>
-    </dl>
-  </div>
+<section class="s" id="projects" style="--bg:var(--xp)"><div class="ht l"></div><div class="wrap">
+<span class="chip">02 · Gamification backend</span>
+<h3>XP Engine: leaderboards that stay fast at a million users.</h3>
+<div class="two">
+<div>
+<h4>The problem</h4><p>Looking up a player’s rank took 31.18 ms at the median in PostgreSQL across 1M+ users. A leaderboard needs that near-instant without risking XP and streak correctness.</p>
+<h4>The approach</h4><p>PostgreSQL is the source of truth. Redis serves ranks as a cache that can be rebuilt at any time. Events are idempotent under concurrency: Redis SET NX, unique constraints, transactions and row-level locking.</p>
+<h4>The outcome</h4><p>Redis answered at 1.54 ms p50. The API sustained ~918 req/s over 110K+ requests with 50 virtual users and 0% HTTP failures. 50 parallel retries and crash-recovery tests held.</p>
+<div class="stack">Java 21 · Spring Boot · PostgreSQL · Redis · Docker · JDBC · JUnit 5</div>
+<a href="https://github.com/santhoshsharrma/xp-engine">Source code ↗</a>
+</div>
+<div style="display:grid;gap:26px">
+<div class="w"><div class="t"><span>Rank lookup, ms</span><span>1M+ users</span></div><div class="b bars" id="b1">
+<div class="r"><span><span class="chip">PostgreSQL</span> p50</span><div class="t"><i data-w="77.9"></i></div><span class="n">31.18</span></div>
+<div class="r f"><span><span class="chip r">Redis</span> p50</span><div class="t"><i data-w="3.9"></i></div><span class="n">1.54</span></div>
+<div class="r"><span><span class="chip">PostgreSQL</span> p99</span><div class="t"><i data-w="95.6"></i></div><span class="n">38.24</span></div>
+<div class="r f"><span><span class="chip r">Redis</span> p99</span><div class="t"><i data-w="5.6"></i></div><span class="n">2.25</span></div>
+<dl class="k"><div><dt>Speed-up at p50</dt><dd>20.3×</dd></div><div><dt>p95 latency under load</dt><dd>57.6 ms</dd></div></dl>
+</div></div>
+<div class="w"><div class="t"><span>rank.lookup</span><span>1,000,000 simulated users</span></div><div class="b">
+<canvas id="cv" width="120" height="56" aria-label="Dithered chart of XP against rank"></canvas>
+<div class="ctl"><label for="xp">XP</label><input id="xp" type="range" min="0" max="1000" value="720"></div>
+<pre class="out" id="out"></pre>
+<p class="note">Runs in your browser: a sorted array plus binary search, the idea behind a Redis sorted set. An illustration, not my benchmark.</p>
+</div></div>
+</div></div>
+<div class="w path">
+<div><b>1 · CLAIM</b>Redis SET NX idem:{user}:{event}, 24 h. Key exists: return duplicate:true, award nothing.</div>
+<div><b>2 · COMMIT</b>BEGIN, lock user row FOR UPDATE, INSERT event ON CONFLICT DO NOTHING, UPDATE xp and streak, COMMIT.</div>
+<div><b>3 · UPDATE VIEW</b>Redis ZADD to the leaderboard. A failure here never fails the request.</div>
+<div><b>4 · RANK</b>ZREVRANK gives the 1-based rank, or null if Redis is down. Postgres stays correct.</div>
+</div>
+</div></section>
 
-  <section class="sec" id="about" aria-labelledby="h-about">
-    <div class="wrap two">
-      <div class="rv"><h2 id="h-about" class="k" style="margin-bottom:14px">About</h2><p class="statement">I got more interested in the systems that move and serve data than in the data itself.</p></div>
-      <div class="prose rv" style="padding-top:34px">
-        <p>I started in Computer Science with a Data Science specialization, with a lot of statistics and analysis along the way.</p>
-        <p>I chose Data Science because I was interested in how data can be used to solve important problems. Over time I became equally curious about the infrastructure behind those applications: how systems process data, manage databases, and work together.</p>
-        <p><b>I learn by building.</b> I follow engineering talks and podcasts from people building products at scale, especially around backend systems, architecture and the decisions behind them. Then I re-create the ideas myself, like writing a crawler without a framework to understand concurrency properly.</p>
-        <p><b>What I’m looking for:</b> Internships and entry-level roles where I can contribute to real projects, write reliable code, and learn from experienced engineers.</p>
-      </div>
-    </div>
-  </section>
+<section class="s" style="--bg:var(--ve)"><div class="ht"></div><div class="wrap">
+<span class="chip">In development · Trust and safety</span>
+<h3>Veritas: an AI-content detector that tells you when it can’t be trusted.</h3>
+<div class="two">
+<div>
+<h4>The problem</h4><p>Single-model detectors learn the artifacts of the generators they trained on. I measured it: a 98.4%-accurate detector fell to chance on a generator it had never seen.</p>
+<h4>The approach</h4><p>Treat the CNN as one signal among several, feeding one explainable report.</p>
+<h4>Done carefully</h4><p>Matched 32×32 JPEG preprocessing removes the real-JPEG vs fake-PNG shortcut. The test split is evaluated once. A control experiment separates dataset shift from generator shift. GPU starvation fixed, epochs down to about three minutes. ONNX matches PyTorch within 0.000005.</p>
+<p class="lim"><b>Limitations.</b> One generator, 32×32. Unreliable on modern or unseen generators. The 12.4% false-positive rate on GenImage is inflated by downscaling. Research project, not a moderation system.</p>
+<div class="stack">PyTorch · ONNX Runtime · FastAPI · LangGraph · pgvector · Docker Compose · GitHub Actions · pytest</div>
+<a href="https://github.com/santhoshsharrma">GitHub ↗</a>
+</div>
+<div style="display:grid;gap:26px">
+<div class="w"><div class="t"><span>AUC by generator</span><span>red line = 0.5, chance</span></div><div class="b bars auc" id="b2">
+<div class="r"><span><span class="chip">CIFAKE</span> same source</span><div class="t"><i data-w="99.8"></i></div><span class="n">0.998</span></div>
+<div class="r"><span><span class="chip">GenImage</span> SD</span><div class="t"><i data-w="85.4"></i></div><span class="n">0.854</span></div>
+<div class="r"><span><span class="chip">GenImage</span> Midjourney</span><div class="t"><i data-w="60"></i></div><span class="n">0.600</span></div>
+<div class="r f"><span><span class="chip r">GenImage</span> BigGAN</span><div class="t"><i data-w="51"></i></div><span class="n">0.510</span></div>
+</div></div>
+<div class="w"><div class="t"><span>pipeline</span><span>built · next · planned</span></div><div class="b"><pre>image ─ 32×32 JPEG q75 ─ EfficientNet-B0 ONNX [built] ─┐
+text  ─ burstiness statistics ──────────────── [built] ─┼─ LangGraph agent [skeleton] ─ report
+fingerprints ─ pgvector cache ─────────────── [planned] ─┘   served by FastAPI [next]</pre></div></div>
+</div></div></div></section>
 
-  <section class="sec" id="work" aria-labelledby="h-work" style="padding-top:0">
-    <div class="wrap">
-      <div class="sh rv"><h2 id="h-work">Featured projects</h2><p>Three projects, each reduced to what it proves and how I built it.</p></div>
+<section class="s" style="--bg:var(--li)"><div class="wrap">
+<span class="chip">Open source · MIT</span>
+<h3>LinkedIn 500 Tracker: a networking CRM that never leaves your browser.</h3>
+<div class="two">
+<div>
+<p>Most referrals come from relationships, but spreadsheets get abandoned. This is a pipeline from Sent to Referral stage with a suggested next action and one-click message per contact, a daily queue and per-category accept rates. One static file of vanilla JavaScript, data in localStorage. It never scrapes or automates LinkedIn.</p>
+<p><a href="https://santhoshsharrma.me/linkedin-networking-engine/">Live demo ↗</a> · <a href="https://github.com/santhoshsharrma/linkedin-networking-engine">Source ↗</a></p>
+</div>
+<div class="w"><div class="t"><span>tracker.config</span><span>no backend</span></div><div class="b"><dl class="k" style="margin:0"><div><dt>Default connection goal</dt><dd>500</dd></div><div><dt>Daily request target</dt><dd>15</dd></div><div><dt>People categories</dt><dd>6</dd></div><div><dt>Accounts · tracking · build step</dt><dd>none</dd></div></dl></div></div>
+</div></div></section>
 
-      <!-- XP Engine -->
-      <article class="sheet dk rv" id="xp">
-        <div class="panel figure">
-          <div class="phead"><h3>Results</h3><span>Local environment</span></div>
-          <p class="k">Rank lookup, p50 · 1M+ users</p>
-          <p class="big num">20.3<small>×</small></p>
-          <p class="cap">Faster than PostgreSQL, with Redis serving the rank.</p>
-          <div class="cmp num" aria-label="PostgreSQL 31.18 ms versus Redis 1.54 ms">
-            <div><span>PostgreSQL</span><div class="t"><i style="width:100%"></i></div><b>31.18 ms</b></div>
-            <div><span>Redis</span><div class="t"><i class="hi" style="width:4.94%"></i></div><b>1.54 ms</b></div>
-          </div>
-          <div class="minis num"><div><b>~918</b><span>req/s</span></div><div><b>57.6 ms</b><span>p95 latency</span></div><div><b>0%</b><span>HTTP failures</span></div></div>
-        </div>
-        <div class="panel story">
-          <p class="kick">Gamification backend</p>
-          <h3>XP Engine: leaderboards that stay fast at a million users.</h3>
-          <div class="beats">
-            <div class="beat"><h4>The problem</h4><p>A player’s rank took <strong>31.18 ms</strong> at the median to look up in PostgreSQL across 1M+ users. A leaderboard needs that to be near-instant, without risking the correctness of XP and streaks.</p></div>
-            <div class="beat"><h4>The approach</h4><p>PostgreSQL stays the <strong>source of truth</strong>. Redis serves ranks as a cache that can be rebuilt at any time. Events are idempotent under concurrency, using Redis SET NX, unique constraints, transactions and row-level locking.</p></div>
-            <div class="beat"><h4>The outcome</h4><p>Redis answers in <strong>1.54 ms p50</strong> and 2.25 ms p99 (PostgreSQL: 38.24 ms). The API sustained ~918 req/s across 110K+ requests with 50 virtual users. Concurrency held under 50 parallel retries, and crash-recovery tests passed. Load test run in a local environment.</p></div>
-          </div>
-          <div class="foot"><p class="tech">Java 21, Spring Boot, PostgreSQL, Redis, Docker, JDBC, JUnit 5</p><a class="pill" href="https://github.com/santhoshsharrma/xp-engine" rel="noopener">Source code<svg class="i"><use href="#ext"/></svg></a></div>
-        </div>
-      </article>
+<section class="s" id="skills" style="--bg:var(--sk)"><div class="ht l"></div><div class="wrap">
+<span class="chip">03 · Skills</span>
+<h2>Where I actually used each one.</h2>
+<div class="w"><div class="t"><span>skills</span><span>what I work with</span></div><div class="b cat">
+<div><small>Languages</small>Java, Python, SQL</div>
+<div><small>Backend</small>Spring Boot, REST APIs, FastAPI</div>
+<div><small>Databases and caching</small>PostgreSQL, Redis</div>
+<div><small>Machine learning</small>PyTorch, ONNX Runtime, Model Evaluation</div>
+<div><small>AI and automation</small>Python, FastAPI, n8n, LangGraph, AI workflow automation</div>
+<div><small>Testing and tools</small>JUnit 5, pytest, Git, Maven, IntelliJ IDEA, Postman, k6, Docker</div>
+</div></div>
+<div class="w" style="margin-top:30px"><div class="t"><span>skills × projects</span><span>● used in that project</span></div><div class="b" style="overflow-x:auto"><table>
+<tr><th>Skill</th><th>XP Engine</th><th>Veritas</th><th>Tracker</th></tr>
+<tr><td>Java · Spring Boot · JDBC</td><td class="y">●</td><td class="n">·</td><td class="n">·</td></tr>
+<tr><td>Python · FastAPI</td><td class="n">·</td><td class="y">●</td><td class="n">·</td></tr>
+<tr><td>PostgreSQL · SQL</td><td class="y">●</td><td class="y">●</td><td class="n">·</td></tr>
+<tr><td>Redis</td><td class="y">●</td><td class="n">·</td><td class="n">·</td></tr>
+<tr><td>PyTorch · ONNX Runtime</td><td class="n">·</td><td class="y">●</td><td class="n">·</td></tr>
+<tr><td>JavaScript (vanilla)</td><td class="n">·</td><td class="n">·</td><td class="y">●</td></tr>
+<tr><td>JUnit 5 · pytest</td><td class="y">●</td><td class="y">●</td><td class="n">·</td></tr>
+<tr><td>Docker</td><td class="y">●</td><td class="y">●</td><td class="n">·</td></tr>
+<tr><td>k6 load testing</td><td class="y">●</td><td class="n">·</td><td class="n">·</td></tr>
+</table></div></div>
+<p class="note">Learning now: Kafka basics, AWS, DSA.</p>
+</div></section>
 
-      <!-- Veritas -->
-      <article class="sheet rv" id="veritas">
-        <div class="panel figure">
-          <div class="phead"><h3>Results so far</h3><span>In development</span></div>
-          <p class="k">AUC, same generator to unseen GAN</p>
-          <p class="big md num">0.998<svg class="arrow" viewBox="0 0 24 24"><use href="#arr"/></svg>0.510</p>
-          <p class="cap">A 98.4%-accurate detector, down to chance level on a generator it had never seen.</p>
-          <ul class="bars num">
-            <li><span>CIFAKE test · same source</span><b>0.998</b><div class="t"><i style="width:99.8%"></i><u></u></div></li>
-            <li><span>GenImage · Stable Diffusion (control)</span><b>0.854</b><div class="t"><i style="width:85.4%"></i><u></u></div></li>
-            <li><span>GenImage · Midjourney</span><b>0.600</b><div class="t"><i style="width:60%"></i><u></u></div></li>
-            <li><span>GenImage · BigGAN</span><b>0.510</b><div class="t"><i style="width:51%"></i><u></u></div></li>
-          </ul>
-          <p class="chance">The vertical mark is 0.5, chance level.</p>
-        </div>
-        <div class="panel story">
-          <p class="kick"><span class="stat-live"><i aria-hidden="true"></i>In active development</span> · Trust and safety, ML systems</p>
-          <h3>Veritas: an AI-content detector that tells you when it can’t be trusted.</h3>
-          <div class="beats">
-            <div class="beat"><h4>The problem</h4><p>AI-generated content is flooding platforms, and <strong>single-model detectors are brittle</strong>: they learn the artifacts of the generators they trained on. I measured this myself, which is why a score on its own benchmark means little.</p></div>
-            <div class="beat"><h4>The approach</h4><p>Treat the CNN as <strong>one signal among several</strong>. EfficientNet-B0 (exported to ONNX), text statistics and a LangGraph agent feed one explainable authenticity report, served through FastAPI, with a pgvector cache of known fingerprints.</p></div>
-            <div class="beat"><h4>The outcome so far</h4><p>A controlled evaluation that <strong>separates dataset shift from generator shift</strong>: 0.998 to 0.854 on the same generator through a new pipeline, then 0.600 and 0.510 on unseen generators. Training time fell to about three minutes an epoch on a free T4.</p></div>
-          </div>
-          <div class="foot"><p class="tech">Python, PyTorch, ONNX Runtime, FastAPI, Pydantic, LangGraph, Ollama, PostgreSQL with pgvector, Docker Compose, GitHub Actions, pytest, Ruff</p><a class="tlink" href="https://github.com/santhoshsharrma" rel="noopener">GitHub profile<svg class="i"><use href="#ext"/></svg></a></div>
-        </div>
-        <div class="panel wide">
-          <div class="cells">
-            <div><h4>Matched preprocessing</h4><p>Every image is shrunk to 32×32 and JPEG-encoded at quality 75, like the training data. In GenImage every real image is a JPEG and every fake a PNG, a shortcut a detector could exploit. One pipeline removes it.</p></div>
-            <div><h4>Disciplined evaluation</h4><p>Model selection uses a validation split carved from training data. The official test split is evaluated <em>once</em>, after training.</p></div>
-            <div><h4>A control experiment</h4><p>Testing Stable Diffusion through the new dataset’s pipeline tells a new dataset apart from a new generator.</p></div>
-            <div><h4>A starved GPU, fixed</h4><p>Training ran with the GPU at 0% utilization because decoding happened on the CPU. Moving the dataset and resizing into GPU memory brought an epoch to about three minutes.</p></div>
-            <div><h4>Verified export</h4><p>ONNX outputs match the PyTorch model to within <em>0.000005</em>.</p></div>
-            <div><h4>Built · Next · Planned</h4><p><em>Built:</em> CI, tests, data pipeline, training and evaluation, ONNX export, text burstiness signal, agent skeleton. <em>Next:</em> the image-serving API. <em>Planned:</em> perplexity, LLM agent and report, pgvector cache, Chrome extension, multi-generator training, video detector.</p></div>
-          </div>
-          <p class="warn"><b>Limitations.</b> Trained on one generator at 32×32, so it is unreliable on modern or unseen generators. The 12.4% false-positive rate on GenImage is inflated by the shift from natively tiny images to downscaled photos. Text signals like burstiness are weak heuristics. Veritas is a research project, not a production moderation system.</p>
-        </div>
-      </article>
+<section class="s" id="education" style="--bg:var(--ed)"><div class="wrap">
+<span class="chip">04 · Education</span>
+<h2>B.Tech, Data Science, 2027.</h2>
+<div class="two">
+<div>
+<h4>2023 – 2027</h4><p><b>Siddhartha Institute of Technology and Sciences.</b> B.Tech, Computer Science and Engineering (Data Science).</p>
+<p>Coursework: Data Structures and Algorithms, Object-Oriented Programming, DBMS, Operating Systems, Computer Networks, AI, Machine Learning, Software Engineering.</p>
+<h4>Earlier</h4><p>Narayana Junior College, Intermediate MPC (2021–23). S.A.V. High School, SSC (2015–2021).</p>
+</div>
+<div class="w"><div class="t"><span>scores</span></div><div class="b bars">
+<div class="r"><span>B.Tech CGPA</span><div class="t"><i data-w="81.7"></i></div><span class="n">8.17</span></div>
+<div class="r"><span>Intermediate</span><div class="t"><i data-w="90.1"></i></div><span class="n">90.1%</span></div>
+<div class="r"><span>SSC</span><div class="t"><i data-w="97"></i></div><span class="n">9.7</span></div>
+</div></div>
+</div></div></section>
 
-           <!-- LinkedIn 500 Tracker -->
-      <article class="sheet rv" id="linkedin">
-        <div class="panel figure">
-          <div class="phead"><h3>At a glance</h3></div>
-          <p class="k">Default connection goal, tracked daily</p>
-          <p class="big num">500</p>
-          <p class="cap">A networking CRM that runs entirely in the browser: no backend, no account, no tracking.</p>
-          <div class="minis num"><div><b>15</b><span>requests a day, the default target</span></div><div><b>6</b><span>people categories to track</span></div></div>
-        </div>
-        <div class="panel story">
-          <p class="kick">Productivity tool · Open source</p>
-          <h3>LinkedIn 500 Tracker: a networking CRM that never leaves your browser.</h3>
-          <div class="beats">
-            <div class="beat"><h4>The problem</h4><p>Most referrals come from relationships, but <strong>spreadsheets get abandoned</strong>. It is easy to lose track of who accepted, who replied and who needs a follow-up.</p></div>
-            <div class="beat"><h4>The approach</h4><p>A status pipeline from Sent to Referral stage, with a <strong>suggested next action and one-click message</strong> for every contact, a daily queue and per-category accept rates. It is one static file in vanilla JavaScript, with data kept in localStorage. It never scrapes or automates LinkedIn.</p></div>
-            <div class="beat"><h4>The outcome</h4><p>Live and <strong>open source under MIT</strong>. It tracks progress toward a goal with daily targets and streaks, estimates the requests and days remaining from your real accept rate, shows which categories accept you most, and exports CSV, JSON backups or a shareable progress card.</p></div>
-          </div>
-          <div class="foot"><p class="tech">HTML, CSS, vanilla JavaScript, localStorage. No build step, no dependencies.</p><div class="acts"><a class="pill" href="https://santhoshsharrma.me/linkedin-networking-engine/" rel="noopener">Live demo<svg class="i"><use href="#ext"/></svg></a><a class="tlink" href="https://github.com/santhoshsharrma/linkedin-networking-engine" rel="noopener">Source code<svg class="i"><use href="#ext"/></svg></a></div></div>
-        </div>
-      </article>
-    </div>
-  </section>
+<section class="s" id="achievements" style="--bg:var(--ac)"><div class="ht"></div><div class="wrap">
+<span class="chip">05 · Achievements</span>
+<h2>Papers, awards and certifications.</h2>
+<div class="rec"><time>Sep 2026</time><div><b>Startup Financial Funding Trends and Investment Insights</b><p>Co-author, International Journal of Data Science and IoT Management System, Vol. 5 No. 3. <a href="https://ijdim.com/journal/index.php/ijdim/article/view/1412">Read ↗</a></p></div></div>
+<div class="rec"><time>Aug 2026</time><div><b>2nd place, Best Project Award</b><p>SITS Campus Training Program. Led a 3-member team among about 40 teams (120 participants). Startup funding dashboard on Vercel: 507 raw records cleaned to 500 validated deals, 59 data-quality issues logged.</p></div></div>
+<div class="rec"><time>Jul 2026</time><div><b>AI Fluency for Students</b><p>Anthropic certification.</p></div></div>
+<div class="rec"><time>Jun 2026</time><div><b>Problem Solving</b><p>HackerRank certification.</p></div></div>
+<div class="rec"><time>Aug 2025</time><div><b>Health Initiative Coordinator</b><p>Co-led a 3-day campus drive with 7 volunteers: 300+ blood donations, 800+ attendees screened.</p></div></div>
+<div class="rec"><time>Jul 2025</time><div><b>The Smart Property Risk Detection</b><p>First author, IRJMETS. Led a team of four on flood and land-risk detection for Telangana. <a href="https://www.irjmets.com/paperdetail.php?paperId=fc3ccec3a0152477f42d0a9dba0bcbed">Read ↗</a></p></div></div>
+</div></section>
 
- 
-  <section class="sec" id="skills" aria-labelledby="h-skills" style="padding-top:0">
-    <div class="wrap">
-      <div class="sh rv"><h2 id="h-skills">Skills</h2></div>
-      <div class="grid3 rv">
-        <div><h3>Languages</h3><p>Java, Python, SQL</p></div>
-        <div><h3>Backend</h3><p>Spring Boot, REST APIs, FastAPI</p></div>
-        <div><h3>Databases & Caching</h3><p>PostgreSQL, MySQL, Redis</p></div>
-        <div><h3>Machine learning</h3><p>PyTorch, ONNX Runtime, Model Evaluation</p></div>
-        <div><h3>AI and automation</h3><p>n8n, AI workflow automation, LangGraph</p></div>
-        <div><h3>Testing and tools</h3><p>JUnit 5, pytest, Git, Maven, IntelliJ IDEA, Postman, k6, Docker</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="record" aria-labelledby="h-rec" style="padding-top:0">
-    <div class="wrap">
-      <div class="sh rv"><h2 id="h-rec">Record</h2><p>Awards, papers, certifications and leadership, newest first.</p></div>
-      <div class="rows rv">
-        <article class="row"><time datetime="2026-09">Sep 2026</time><div><h3>Startup Financial Funding Trends and Investment Insights</h3><p>Co-author. International Journal of Data Science and IoT Management System, Vol. 5, No. 3, pp. 1411–1417.</p><a class="tlink" href="https://ijdim.com/journal/index.php/ijdim/article/view/1412" rel="noopener">Read the paper<svg class="i"><use href="#ext"/></svg></a></div><span class="type">Publication</span></article>
-        <article class="row"><time datetime="2026-08">Aug 2026</time><div><h3>2nd place, Best Project Award</h3><p>SITS Campus Training Program. Led a 3-member team to 2nd among about 40 teams (120 participants) with a startup funding dashboard, deployed on Vercel. Cleaned 507 raw records into 500 validated deals and logged 59 data-quality issues.</p></div><span class="type">Award</span></article>
-        <article class="row"><time datetime="2026-07">Jul 2026</time><div><h3>AI Fluency for Students</h3><p>Anthropic</p></div><span class="type">Certification</span></article>
-        <article class="row"><time datetime="2026-06">Jun 2026</time><div><h3>Problem-Solving</h3><p>HackerRank</p></div><span class="type">Certification</span></article>
-        <article class="row"><time datetime="2025-08">Aug 2025</time><div><h3>Health Initiative Coordinator</h3><p>Siddhartha Institute of Technology and Sciences. Co-led a 3-day on-campus health initiative with 7 volunteers: 300+ blood donations and health screenings (blood tests, BMI) for 800+ attendees.</p></div><span class="type">Leadership</span></article>
-        <article class="row"><time datetime="2025-07">Jul 2025</time><div><h3>The Smart Property Risk Detection</h3><p>First author. International Research Journal of Modernization in Engineering, Technology and Science. Led a team of four in conceptualizing HYDRAA Vision, a way to identify property and land risks in Telangana such as flooding, land instability and environmental concerns, and to support earlier, better-informed decisions.</p><a class="tlink" href="https://www.irjmets.com/paperdetail.php?paperId=fc3ccec3a0152477f42d0a9dba0bcbed" rel="noopener">Read the paper<svg class="i"><use href="#ext"/></svg></a></div><span class="type">Publication</span></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="education" aria-labelledby="h-edu" style="padding-top:0">
-    <div class="wrap">
-      <div class="sh rv"><h2 id="h-edu">Education</h2></div>
-      <div class="rows rv">
-        <article class="row"><span class="d num">2023 – 2027</span><div><h3>Siddhartha Institute of Technology and Sciences</h3><p>B.Tech, Computer Science and Engineering (Data Science). CGPA 8.17 / 10. Coursework: Data Structures and Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, Computer Networks, Artificial Intelligence, Machine Learning, Software Engineering.</p></div><span class="type">Current</span></article>
-        <article class="row"><span class="d num">2021 – 2023</span><div><h3>Narayana Junior College</h3><p>Intermediate, MPC. 90.1%.</p></div><span class="type">Completed</span></article>
-        <article class="row"><span class="d num">2015 – 2021</span><div><h3>S.A.V. High School</h3><p>SSC. 9.7 / 10.</p></div><span class="type">Completed</span></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="dark contact" id="contact" aria-labelledby="h-contact" style="margin-top:clamp(24px,4vw,56px)">
-    <div class="wrap">
-      <h2 id="h-contact" class="rv">Let’s talk.</h2>
-      <p class="sub rv">Open to internships and full-time roles. Based in Hyderabad, India.</p>
-      <div class="acts rv"><a class="pill" href="mailto:santhoshsharmapaturi@gmail.com">Email me</a><a class="pill line" href="Santhosh_Sharma%20Resume.pdf">Resume</a></div>
-      <a class="mail rv" href="mailto:santhoshsharmapaturi@gmail.com">santhoshsharmapaturi@gmail.com</a>
-      <div class="soc rv">
-        <a href="https://www.linkedin.com/in/santhoshsharma" rel="noopener">LinkedIn<svg class="i"><use href="#ext"/></svg></a>
-        <a href="https://github.com/santhoshsharrma" rel="noopener">GitHub<svg class="i"><use href="#ext"/></svg></a>
-      </div>
-    </div>
-  </section>
+<section class="s dark" id="contact"><div class="ht"></div><div class="wrap">
+<div class="big">Let’s talk.</div>
+<p>Open to internships and full-time roles. Hyderabad, India.</p>
+<p><a href="mailto:santhoshsharmapaturi@gmail.com">santhoshsharmapaturi@gmail.com</a><br><a href="https://www.linkedin.com/in/santhoshsharma">LinkedIn</a> · <a href="https://github.com/santhoshsharrma">GitHub</a> · <a href="https://santhoshsharrma.me/Santhosh_Sharma%20Resume.pdf">Résumé</a></p>
+<footer><span>© 2026 Santhosh Sharma</span><a href="#top">Back to top ↑</a></footer>
+</div></section>
 </main>
-
-<footer class="dark"><div class="wrap"><span>© 2026 Santhosh Sharma</span><a href="#top">Back to top</a></div></footer>
 
 <script>
 (function(){
-  var nav=document.getElementById('nav'),menu=document.getElementById('menu');
-  new IntersectionObserver(function(e){nav.classList.toggle('scrolled',!e[0].isIntersecting)}).observe(document.getElementById('sentinel'));
-  function setMenu(o){nav.classList.toggle('open',o);menu.setAttribute('aria-expanded',String(o))}
-  menu.addEventListener('click',function(){setMenu(!nav.classList.contains('open'))});
-  document.getElementById('links').addEventListener('click',function(e){if(e.target.closest('a'))setMenu(false)});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&nav.classList.contains('open')){setMenu(false);menu.focus()}});
-  var els=document.querySelectorAll('.rv');
-  if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){els.forEach(function(el){el.classList.add('in')});return}
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.06,rootMargin:'0px 0px -4% 0px'});
-  els.forEach(function(el){io.observe(el)});
+var root=document.documentElement,B=[0,8,2,10,12,4,14,6,3,11,1,9,15,7,13,5];
+try{var sv=localStorage.getItem("th");if(sv)root.setAttribute("data-theme",sv)}catch(e){}
+var mn=document.getElementById("mn"),menu=document.getElementById("menu");
+function tog(o){menu.hidden=!o;mn.setAttribute("aria-expanded",o)}
+mn.onclick=function(e){e.stopPropagation();tog(menu.hidden)};
+menu.onclick=function(e){e.stopPropagation();if(e.target.closest("a"))tog(false)};
+document.onclick=function(){tog(false)};document.onkeydown=function(e){if(e.key==="Escape")tog(false)};
+document.getElementById("th").onclick=function(){var d=root.getAttribute("data-theme")?root.getAttribute("data-theme")==="dark":matchMedia("(prefers-color-scheme: dark)").matches;var n=d?"light":"dark";root.setAttribute("data-theme",n);try{localStorage.setItem("th",n)}catch(e){}draw();field()};
+var clk=document.getElementById("clk");
+function tick(){try{clk.textContent="Hyderabad · "+new Date().toLocaleTimeString("en-GB",{timeZone:"Asia/Kolkata",hour12:false,hour:"2-digit",minute:"2-digit"})+" IST"}catch(e){}}tick();setInterval(tick,20000);
+function colors(c){var s=getComputedStyle(document.body);return{ink:s.color,card:getComputedStyle(c).backgroundColor,red:s.getPropertyValue("--red").trim()}}
+/* hero dither field */
+var hf=document.getElementById("hf"),hx=hf.getContext("2d"),T=0,mx=.7,my=.4,rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+hf.addEventListener("pointermove",function(e){var r=hf.getBoundingClientRect();mx=(e.clientX-r.left)/r.width;my=(e.clientY-r.top)/r.height});
+function field(){var c=colors(hf),W=hf.width,H=hf.height;hx.fillStyle=c.card;hx.fillRect(0,0,W,H);hx.fillStyle=c.ink;
+ for(var y=0;y<H;y++)for(var x=0;x<W;x++){var v=(Math.sin(x*.16+T)+Math.sin(y*.21-T*.7)+Math.sin((x+y)*.09+T*.5))/6+.5,dx=x/W-mx,dy=y/H-my;v+=.55*Math.exp(-(dx*dx+dy*dy)*30);
+ if(B[(y&3)*4+(x&3)]/16<v-.15)hx.fillRect(x,y,1,1)}}
+function loop(){T+=.03;field();if(!rm)requestAnimationFrame(loop)}
+loop();
+/* 1M simulated XP, sorted */
+var N=1e6,A=new Float64Array(N);for(var i=0;i<N;i++){A[i]=Math.floor(1e9*Math.pow(Math.random(),3))}A.sort();
+function above(v){var lo=0,hi=N;while(lo<hi){var m=(lo+hi)>>1;if(A[m]>v)hi=m;else lo=m+1}return N-lo}
+var cv=document.getElementById("cv"),cx=cv.getContext("2d"),W=cv.width,H=cv.height,sl=document.getElementById("xp"),out=document.getElementById("out"),cur=[];
+for(var x=0;x<W;x++)cur.push(Math.round((H-1)*(1-A[Math.min(N-1,Math.floor(x/W*N))]/1e9)));
+function draw(){var c=colors(cv),v=Math.floor(1e9*Math.pow(sl.value/1000,3)),r=above(v)+1,t0=performance.now();for(var j=0;j<2000;j++)above(v+j);var dt=(performance.now()-t0)/2000;
+ cx.fillStyle=c.card;cx.fillRect(0,0,W,H);cx.fillStyle=c.ink;
+ for(var x=0;x<W;x++)for(var y=cur[x];y<H;y++){var q=.2+.8*(y-cur[x])/Math.max(1,H-cur[x]);if(B[(y&3)*4+(x&3)]/16<q*.9)cx.fillRect(x,y,1,1)}
+ var px=Math.min(W-1,Math.round((1-r/N)*W)),py=cur[px];cx.fillStyle=c.red;cx.fillRect(px,0,1,H);cx.fillRect(Math.max(0,px-2),Math.max(0,py-2),5,5);
+ out.textContent="xp      "+v.toLocaleString("en-IN")+"\nrank    "+r.toLocaleString("en-IN")+" of 1,000,000\nlookup  "+dt.toFixed(4)+" ms avg of 2,000"}
+sl.oninput=draw;draw();
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.querySelectorAll("i[data-w]").forEach(function(i){i.style.transition="width .9s cubic-bezier(.2,.7,.2,1)";i.style.width=i.dataset.w+"%"});io.unobserve(e.target)}})},{threshold:.3});
+document.querySelectorAll(".bars").forEach(function(b){io.observe(b)});
 })();
 </script>
 </body>
